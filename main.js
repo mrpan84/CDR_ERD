@@ -23,6 +23,21 @@ window.addEventListener("mousemove", function(event){
             }
             isHovering = true;
             instancies[i].highlight();
+
+            // getting the icon unicode
+            var icon = instancies[i].icon;
+            
+            setTimeout(function() {
+                var random = Math.floor(Math.random()*rgbArray.length);
+                c.font = "28px FontAwesome";
+                c.fillStyle = rgbArray[random];        
+                
+                if(instancies[i].icon != null){
+                c.fillText(icon, instancies[i].currPos[0], instancies[i].currPos[1]-25);
+
+                }
+              }, 0); //0 is no timeout when hovering
+
             break;
         }else{
             instancies[i].resetDefaults();
@@ -78,6 +93,7 @@ class Node extends Movable{
         super(n["pos"]["x"], n["pos"]["y"])
         this.name = n["label"];
         this.label = n["label"];
+        this.icon = n["icon"];
         this.w = c.measureText(this.name).width;
         this.h = c.measureText(this.name).height;
         this.fixed = n["fixed"];
@@ -87,14 +103,22 @@ class Node extends Movable{
         this.inboundEdges = [];
     }
 
+    drawIcon(){
+        if(this.icon != null){
+        c.font = "28px FontAwesome";
+        c.fillStyle = "black";
+        if(this.icon != null){
+            c.fillText(this.icon, this.currPos[0], this.currPos[1]-25);
+        }
+    }
+    }
+
     drawCircle(){
         c.beginPath();
         c.arc(this.currPos[0], this.currPos[1], 30, 0, Math.PI * 2, false);
         c.strokeStyle = this.color;
         c.lineWidth = this.lineWidth;
         c.stroke();
-
-        this.drawText();
     }
 
     drawText(){
@@ -199,7 +223,9 @@ function drawCanvas(){
     }
 
     for(const n in instancies){
-        instancies[n].drawCircle();
+        //instancies[n].drawCircle();
+        instancies[n].drawIcon();
+        instancies[n].drawText();
     }
 }
 

@@ -2,6 +2,7 @@ var canvas = document.getElementById("viewport");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var c = canvas.getContext("2d");
+c.clearRect(0, 0, canvas.width, canvas.height);
 let seperator = 0;
 
 var rgbArray = [
@@ -27,6 +28,7 @@ var rgbArray = [
          "label":"people", 
          "color":"green",
          "fixed": true,
+         "icon": "\uf0c0",
          "pos": {"x":Math.floor(window.innerWidth * 0.2), "y": Math.floor(window.innerHeight * 0.5)},
          "columns":[
            "person_id",
@@ -35,7 +37,8 @@ var rgbArray = [
        person_addresses:{
          "label":"person_addresses", 
          "color":"orange",
-         "fixed": false, 
+         "fixed": false,
+         "icon": "\uf2b9", 
          "pos": {"x":Math.floor(window.innerWidth * 0.06), "y": Math.floor(window.innerHeight * 0.4)},
          "columns":[
            "person_id",
@@ -44,7 +47,8 @@ var rgbArray = [
        person_names:{
          "label":"person_names", 
          "color":"orange",
-         "fixed": false,  
+         "fixed": false,
+         "icon": "\uf2b9",  
          "pos": {"x":Math.floor(window.innerWidth * 0.06), "y": Math.floor(window.innerHeight * 0.85)},
          "columns":[
            "person_id",
@@ -53,7 +57,8 @@ var rgbArray = [
        person_types:{
         "label":"person_types", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf509",
         "pos": {"x":Math.floor(window.innerWidth * 0.06), "y": Math.floor(window.innerHeight * 0.7)},
         "columns":[
             "person_type_id"
@@ -62,7 +67,8 @@ var rgbArray = [
       person_has_type:{
         "label":"person_has_type", 
         "color":"orange",
-        "fixed": false,  
+        "fixed": false, 
+        "icon": "\ue541",
         "pos": {"x":Math.floor(window.innerWidth * 0.06), "y": Math.floor(window.innerHeight * 0.55)},
         "columns":[
           "person_id",
@@ -82,6 +88,7 @@ var rgbArray = [
         "label":"identifiers", 
         "color":"orange",
         "fixed": false,  
+        "icon": "\uf2c2",
         "pos": {"x":Math.floor(window.innerWidth * 0.06), "y": Math.floor(window.innerHeight * 0.1)},
         "columns":[
           "person_id",
@@ -90,7 +97,8 @@ var rgbArray = [
       occupation:{
         "label":"occupation", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf2bb",
         "pos": {"x":Math.floor(window.innerWidth * 0.2), "y": Math.floor(window.innerHeight * 0.85)},
         "columns":[
           "person_id",
@@ -99,7 +107,8 @@ var rgbArray = [
       contact_details:{
         "label":"contact_details", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf2c2", 
         "pos": {"x":Math.floor(window.innerWidth * 0.25), "y": Math.floor(window.innerHeight * 0.7)},
         "columns":[
           "person_id",
@@ -108,7 +117,8 @@ var rgbArray = [
       hiv_staging_infos:{
         "label":"hiv_staging_infos", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\ue076",
         "pos": {"x":Math.floor(window.innerWidth * 0.35), "y": Math.floor(window.innerHeight * 0.85)},
         "columns":[
           "person_id",
@@ -126,7 +136,8 @@ var rgbArray = [
       potential_duplicates:{
         "label":"potential_duplicates", 
         "color":"orange",
-        "fixed": false,  
+        "fixed": false, 
+        "icon": "\uf0c5", 
         "pos": {"x":Math.floor(window.innerWidth * 0.35), "y": Math.floor(window.innerHeight * 0.25)},
         "columns":[
           "person_id",
@@ -136,6 +147,7 @@ var rgbArray = [
         "label":"outcomes", 
         "color":"orange", 
         "fixed": false, 
+        "icon": "\uf681",
         "pos": {"x":Math.floor(window.innerWidth * 0.2), "y": Math.floor(window.innerHeight * 0.1)},
         "columns":[
           "person_id",
@@ -145,6 +157,7 @@ var rgbArray = [
         "label":"relationships", 
         "color":"orange", 
         "fixed": false, 
+        "icon": "\uf067",
         "pos": {"x":Math.floor(window.innerWidth * 0.35), "y": Math.floor(window.innerHeight * 0.1)},
         "columns":[
           "person_id",
@@ -153,7 +166,8 @@ var rgbArray = [
        de_duplicator:{
         "label":"de_duplicator", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf24d",
         "pos": {"x":Math.floor(window.innerWidth * 0.2), "y": Math.floor(window.innerHeight * 0.25)},
         "columns":[
           "person_id",
@@ -163,6 +177,7 @@ var rgbArray = [
         "label":"encounters", 
         "color":"orange", 
         "fixed": true,
+        "icon": "\uf0f0", 
         "pos": {"x":Math.floor(window.innerWidth * 0.6) + seperator, "y": Math.floor(window.innerHeight * 0.75)},
         "columns":[
           "person_id",
@@ -173,6 +188,7 @@ var rgbArray = [
         "label":"master_definitions", 
         "color":"orange", 
         "fixed": true,
+        "icon": "\uf02d",
         "pos": {"x":Math.floor(window.innerWidth * 0.6) + seperator, "y": Math.floor(window.innerHeight * 0.06)},
         "columns":[
           "master_definition_id",
@@ -199,7 +215,8 @@ var rgbArray = [
       pregnant_statuses:{
         "label":"pregnant_statuses", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\ue31e",
         "pos": {"x":Math.floor(window.innerWidth * 0.65) + seperator, "y": Math.floor(window.innerHeight * 0.85)},
         "columns":[
           "encounter_id",
@@ -209,6 +226,7 @@ var rgbArray = [
         "label":"appointments", 
         "color":"orange", 
         "fixed": false, 
+        "icon": "\uf2b5",
         "pos": {"x":Math.floor(window.innerWidth * 0.75) + seperator, "y": Math.floor(window.innerHeight * 0.85)},
         "columns":[
           "encounter_id",
@@ -218,6 +236,7 @@ var rgbArray = [
         "label":"vitals", 
         "color":"orange", 
         "fixed": false, 
+        "icon": "\uf21e",
         "pos": {"x":Math.floor(window.innerWidth * 0.45) + seperator, "y": Math.floor(window.innerHeight * 0.15)},
         "columns":[
           "encounter_id",
@@ -237,7 +256,8 @@ var rgbArray = [
       presenting_complaints:{
         "label":"presenting_complaints", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf481",
         "pos": {"x":Math.floor(window.innerWidth * 0.45) + seperator, "y": Math.floor(window.innerHeight * 0.45)},
         "columns":[
           "encounter_id",
@@ -247,7 +267,8 @@ var rgbArray = [
       diagnosis:{
         "label":"diagnosis", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf0f1",
         "pos": {"x":Math.floor(window.innerWidth * 0.45) + seperator, "y": Math.floor(window.innerHeight * 0.6)},
         "columns":[
           "encounter_id",
@@ -257,7 +278,8 @@ var rgbArray = [
       symptoms:{
         "label":"symptoms", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\ue061", 
         "pos": {"x":Math.floor(window.innerWidth * 0.55) + seperator, "y": Math.floor(window.innerHeight * 0.3)},
         "columns":[
           "encounter_id",
@@ -267,7 +289,8 @@ var rgbArray = [
       breastfeeding_statuses:{
         "label":"breastfeeding_statuses", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\ue53a", 
         "pos": {"x":Math.floor(window.innerWidth * 0.55) + seperator, "y": Math.floor(window.innerHeight * 0.15)},
         "columns":[
           "encounter_id",
@@ -277,7 +300,8 @@ var rgbArray = [
       side_effects:{
         "label":"side_effects", 
         "color":"orange",
-        "fixed": false,  
+        "fixed": false, 
+        "icon": "\ue064", 
         "pos": {"x":Math.floor(window.innerWidth * 0.55) + seperator, "y": Math.floor(window.innerHeight * 0.6)},
         "columns":[
           "encounter_id",
@@ -287,7 +311,8 @@ var rgbArray = [
       medication_prescriptions:{
         "label":"medication_prescriptions", 
         "color":"orange",
-        "fixed": false,  
+        "fixed": false,
+        "icon": "\uf486",
         "pos": {"x":Math.floor(window.innerWidth * 0.75) + seperator, "y": Math.floor(window.innerHeight * 0.6)},
         "columns":[
           "encounter_id",
@@ -307,7 +332,8 @@ var rgbArray = [
       medication_regimen:{
         "label":"medication_regimen", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf484", 
         "pos": {"x":Math.floor(window.innerWidth * 0.85) + seperator, "y": Math.floor(window.innerHeight * 0.15)},
         "columns":[
         ]
@@ -323,7 +349,8 @@ var rgbArray = [
       medication_dispensations:{
         "label":"medication_dispensations", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf490",
         "pos": {"x":Math.floor(window.innerWidth * 0.65) + seperator, "y": Math.floor(window.innerHeight * 0.3)},
         "columns":[
         ]
@@ -340,7 +367,8 @@ var rgbArray = [
       lab_orders:{
         "label":"lab_orders", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\uf0c3", 
         "pos": {"x":Math.floor(window.innerWidth * 0.85) + seperator, "y": Math.floor(window.innerHeight * 0.6)},
         "columns":[
           "encounter_id",
@@ -350,7 +378,8 @@ var rgbArray = [
       lab_test_results:{
         "label":"lab_test_results", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\ue597",
         "pos": {"x":Math.floor(window.innerWidth * 0.85) + seperator, "y": Math.floor(window.innerHeight * 0.75)},
         "columns":[
         ]
