@@ -206,7 +206,8 @@ var rgbArray = [
       family_plannings:{
         "label":"family_plannings", 
         "color":"orange", 
-        "fixed": false, 
+        "fixed": false,
+        "icon": "\ue537", 
         "pos": {"x":Math.floor(window.innerWidth * 0.55) + seperator, "y": Math.floor(window.innerHeight * 0.85)},
         "columns":[
           "encounter_id",
@@ -246,7 +247,8 @@ var rgbArray = [
       patient_histories:{
         "label":"patient_histories", 
         "color":"orange",
-        "fixed": false,  
+        "fixed": false, 
+        "icon": "\uf487", 
         "pos": {"x":Math.floor(window.innerWidth * 0.45) + seperator, "y": Math.floor(window.innerHeight * 0.3)},
         "columns":[
           "encounter_id",
