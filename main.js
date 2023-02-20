@@ -122,7 +122,7 @@ class Node extends Movable{
     }
 
     drawText(){
-        c.font = "12px Comic Sans MS";
+        c.font = "15px Comic Sans MS";
         c.beginPath();
         c.textAlign = "center";
         c.textBaseline = "middle";
